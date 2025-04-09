@@ -21,4 +21,21 @@ spec:
         - name: nginx
           image: nginx
 
+---
+
+apiVersion: v1
+kind: Service 
+metadata: 
+  name: frontend
+spec:
+  type: NodePort 
+  selector: 
+    app: backend 
+    demo: rs 
+  ports:
+  - protocol: TCP 
+    port: 80
+    targetPort: 80
+    nodePort: 30007
+
 
