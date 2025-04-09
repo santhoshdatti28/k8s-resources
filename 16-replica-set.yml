@@ -1,4 +1,4 @@
-apiVersion: apps/v1
+apiVersion: app/v1
 kind: ReplicaSet
 metadata:
   name: my-rs
@@ -8,18 +8,18 @@ metadata:
 spec:
   replicas: 5
   selector:
-    matchLables:
+    matchLabels:
       app: backend
       demo: rs
-    template:
-      metadata:
-        labels:
-          app: backend
-          demo: rs 
-      spec:
-        containers:
-        - name: nginx
-          image: nginx
+  template:
+    metadata:
+      labels:
+        app: backend
+        demo: rs 
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
 
 ---
 
