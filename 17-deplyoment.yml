@@ -11,15 +11,15 @@ spec:
     matchLabels:
       project: expense 
       demo: deplyoment 
-    template:
-      metadata:
-        labels:
-          project: expense 
-          demo: deplyoment 
-      spec: 
-        containers: 
-        - name: nginx 
-          image: nginx 
+  template:
+    metadata:
+      labels:
+        project: expense 
+        demo: deplyoment 
+    spec: 
+      containers: 
+      - name: nginx 
+        image: nginx 
 --- 
 
 apiVersion: v1 
