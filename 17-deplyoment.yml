@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deplyoment
+metadata:
+  name: mydeplyoment
+  labels:
+    project: expense
+    demo: deplyoment 
+spec:
+  replicas: 3
+  selector: 
+    matchLabels:
+      project: expense 
+      demo: deplyoment 
+    template:
+      metadata:
+        labels:
+          project: expense 
+          demo: deplyoment 
+      spec: 
+        containers: 
+        - name: nginx 
+          image: nginx 
+--- 
+
+apiVersion: v1 
+kind: Service 
+metadata: 
+  name: frontend
+spec: 
+  type: LoadBalancer
+  selector: 
+    project: expense 
+    demo: deplyoment
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+    nodePort: 32000
