@@ -6,9 +6,8 @@ spec:
   accessModes:
   - ReadWriteOnce
   capacity:
-    storage: 30Gi
+    storage: 20Gi
   csi:
     driver: ebs.csi.aws.com
     fsType: ext4
-    volumeHandle: vol-04bc891d056ecb4ac
- 
+    volumeHandle: vol-0575b881ace378e17
