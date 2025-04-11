@@ -19,7 +19,7 @@ metadata:
 spec:
   containers:
   - name: app
-    image: public.ecr.aws/amazonlinux/amazonlinux
+    image: nginx
     volumeMounts:
     - name: persistent-storage
       mountPath: /usr/share/nginx/html
