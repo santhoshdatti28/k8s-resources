@@ -1,19 +1,19 @@
-apiVersion: v1 
-kind: DaemonSet 
+apiVersion: apps/v1
+kind: DaemonSet
 metadata:
-  name: my-ds 
-spec: 
-  selector: 
+  name: my-ds
+  namespace: expense  # Optional: remove if you want to use the default namespace
+spec:
+  selector:
     matchLabels:
-      app: web 
+      app: web
   template:
-   metadata: 
-    labels:
-      app: web 
-  spec: 
-   containers:
-   - name: nginx
-     image: nginx 
-     ports:
-     - conatinerPort: 80
-  
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        ports:
+        - containerPort: 80
