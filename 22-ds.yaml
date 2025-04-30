@@ -1,0 +1,19 @@
+apiVersion: v1 
+kind: DaemonSet 
+metadata:
+  name: my-ds 
+spec: 
+  selector: 
+    matchLabels:
+      app: web 
+  template:
+   metadata: 
+    labels:
+      app: web 
+  spec: 
+   containers:
+   - name: nginx
+     image: nginx 
+     ports:
+     - conatinerPort: 80
+  
